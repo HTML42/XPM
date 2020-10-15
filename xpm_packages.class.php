@@ -16,12 +16,10 @@ class XPM_Packages {
                     $package_name_github = 'github_' . preg_replace('/[^<\d\w]/', '_', substr($package_name, 8));
                     $package_local_path = XPM::_ensure_trailing_slash(XPM_DIR_library) . $package_name_github . '/';
                     //
-                    var_dump($package_local_path);
                     if (!is_dir($package_local_path)) {
                         @mkdir($package_local_path);
                         $github_master_zip = 'https://github.com/' . $package_name . '/archive/master.zip';
                     }
-                    die;
                     $package_startfilepath = $package_local_path . 'startup.php';
                 } else {
                     $package_local_path = XPM::_ensure_trailing_slash(XPM_DIR_library) . $package_name . '/';
